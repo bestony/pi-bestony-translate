@@ -16,8 +16,8 @@ The plugin does not call a model itself. It assembles a prompt from files discov
 pi install npm:pi-bestony-translate
 
 # from git (SSH, then HTTPS once your SSH key is set up)
-pi install git:git@github.com:bestony/pi-bestony-translate@v0.0.1
-pi install git:github.com/bestony/pi-bestony-translate@v0.0.1
+pi install git:git@github.com:bestony/pi-bestony-translate@v0.0.2
+pi install git:github.com/bestony/pi-bestony-translate@v0.0.2
 
 # try it for one run without touching settings
 pi -e npm:pi-bestony-translate

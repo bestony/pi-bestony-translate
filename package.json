@@ -1,6 +1,6 @@
 {
   "name": "pi-bestony-translate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pi package: /translate, /review-translate and /init-translate commands that load a project glossary, translation config and style guide, assemble an overridable prompt and hand the job to the current pi agent.",
   "license": "MIT",
   "author": "bestony",
