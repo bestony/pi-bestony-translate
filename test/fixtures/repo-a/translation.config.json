@@ -1,0 +1,9 @@
+{
+  "sourceLang": "en",
+  "targets": ["zh-CN", "ja"],
+  "tone": "Technical documentation. Concise, second person.",
+  "doNotTranslate": ["Pi", "AGENTS.md"],
+  "preserve": ["frontmatter", "code"],
+  "output": { "pattern": "{dir}/{name}.{lang}{ext}" },
+  "review": { "sourcePattern": "{dir}/{name}{ext}" }
+}

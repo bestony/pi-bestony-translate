@@ -1,0 +1,9 @@
+{
+  "app": {
+    "title": "翻译智能体",
+    "welcome": "你好，{name}！你有 %d 条新消息。",
+    "docs_url": "https://example.com/docs",
+    "version": "1.2.3",
+    "enabled": true
+  }
+}

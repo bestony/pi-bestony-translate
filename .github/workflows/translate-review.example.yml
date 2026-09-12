@@ -1,0 +1,48 @@
+# Example only: GitHub ignores workflow files that do not end in .yml/.yaml directly under
+# .github/workflows/ — this one is named *.example.yml so it is NOT enabled. Copy it to
+# translate-review.yml in the repository that holds the translations to turn it on.
+#
+# On pull requests that touch docs/, review every changed zh-CN translation against its
+# source with `/review-translate --json` and fail the job on any blocker.
+name: Translation review (example)
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    env:
+      # pi needs a model provider; configure one via the provider's environment variable
+      # (see https://pi.dev/docs/latest/providers) and pick the model with --model below.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pi and the translate plugin
+        run: |
+          npm install -g @earendil-works/pi-coding-agent
+          pi install npm:pi-bestony-translate
+
+      - name: Review changed translations
+        shell: bash
+        run: |
+          set -uo pipefail
+          status=0
+          for f in $(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- 'docs/**/*.zh-CN.md'); do
+            src="${f/.zh-CN./.}"
+            echo "::group::$f"
+            pi -a --model "${PI_MODEL:-anthropic/claude-sonnet-4-5}" \
+              -p "/review-translate zh-CN $f --source $src --json" \
+              | npx -y -p pi-bestony-translate translate-review-exit-code || status=1
+            echo "::endgroup::"
+          done
+          exit $status

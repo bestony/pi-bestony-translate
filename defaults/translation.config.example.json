@@ -1,0 +1,9 @@
+{
+  "sourceLang": "en",
+  "targets": ["zh-CN"],
+  "tone": "Technical documentation. Concise, second person, no exclamation marks.",
+  "doNotTranslate": ["Pi", "pi package", "AGENTS.md"],
+  "preserve": ["frontmatter", "code", "inline-code", "urls", "html-tags", "image-paths"],
+  "output": { "pattern": "{dir}/{name}.{lang}{ext}" },
+  "review": { "sourcePattern": "{dir}/{name}{ext}" }
+}

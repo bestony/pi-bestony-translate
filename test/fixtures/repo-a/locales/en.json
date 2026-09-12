@@ -1,0 +1,9 @@
+{
+  "app": {
+    "title": "Translate Agent",
+    "welcome": "Hello, {name}! You have %d new messages.",
+    "docs_url": "https://example.com/docs",
+    "version": "1.2.3",
+    "enabled": true
+  }
+}

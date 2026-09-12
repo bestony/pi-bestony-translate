@@ -1,0 +1,7 @@
+source,zh-CN,note,keep
+Agent,智能体,Product docs always use 智能体; leave untranslated when it appears as a code identifier,
+pre-commit,,Tool name,true
+code review,代码评审,Not 代码审查,
+extension,扩展,"A pi ""extension"" is always 扩展; never 插件",
+prompt,提示词,"When paired with ""template"", use 提示词模板",
+glossary,术语表,,

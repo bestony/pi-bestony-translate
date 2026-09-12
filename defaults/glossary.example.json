@@ -1,0 +1,32 @@
+[
+  {
+    "source": "Agent",
+    "targets": { "zh-CN": "智能体" },
+    "note": "Product docs always use 智能体; leave untranslated when it appears as a code identifier"
+  },
+  {
+    "source": "pre-commit",
+    "targets": {},
+    "note": "Tool name",
+    "keep": true
+  },
+  {
+    "source": "code review",
+    "targets": { "zh-CN": "代码评审" },
+    "note": "Not 代码审查"
+  },
+  {
+    "source": "extension",
+    "targets": { "zh-CN": "扩展" },
+    "note": "A pi \"extension\" is always 扩展; never 插件"
+  },
+  {
+    "source": "prompt",
+    "targets": { "zh-CN": "提示词" },
+    "note": "When paired with \"template\", use 提示词模板"
+  },
+  {
+    "source": "glossary",
+    "targets": { "zh-CN": "术语表" }
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/bestony/pi-bestony-translate/main/schema/translation.config.schema.json",
+  "title": "translation.config.json (pi-bestony-translate)",
+  "description": "Project-level translation settings discovered by /translate and /review-translate. Unknown keys are reported and ignored.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor hint; ignored by the plugin."
+    },
+    "sourceLang": {
+      "type": "string",
+      "description": "BCP 47 tag of the source language (e.g. \"en\", \"zh-CN\") or \"auto\"."
+    },
+    "targets": {
+      "type": "array",
+      "description": "Target languages offered for argument completion; /translate warns when a language is not listed.",
+      "items": { "type": "string" }
+    },
+    "tone": {
+      "type": "string",
+      "description": "One or two sentences on register and voice, injected into the prompt as a project rule."
+    },
+    "doNotTranslate": {
+      "type": "array",
+      "description": "Words and phrases that stay in the source language.",
+      "items": { "type": "string" }
+    },
+    "preserve": {
+      "type": "array",
+      "description": "Structural elements that must stay untouched (frontmatter, code, inline-code, urls, html-tags, image-paths, ...).",
+      "items": { "type": "string" }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "description": "Output path pattern with {dir} {name} {ext} {lang}. Default \"{dir}/{name}.{lang}{ext}\"."
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sourcePattern": {
+          "type": "string",
+          "description": "Where /review-translate looks for the source of a translated file. Default \"{dir}/{name}{ext}\" after stripping .<lang> from the name."
+        }
+      }
+    },
+    "suggestions": {
+      "type": "boolean",
+      "description": "Let the agent append candidate terms to glossary.suggested.<ext>. Default true."
+    }
+  }
+}

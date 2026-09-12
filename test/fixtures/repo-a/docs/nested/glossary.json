@@ -1,0 +1,3 @@
+[
+  { "source": "Agent", "targets": { "zh-CN": "代理" }, "note": "Nested override wins over the repo root" }
+]

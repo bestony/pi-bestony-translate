@@ -1,0 +1,70 @@
+{
+  "name": "pi-bestony-translate",
+  "version": "0.0.1",
+  "description": "Pi package: /translate, /review-translate and /init-translate commands that load a project glossary, translation config and style guide, assemble an overridable prompt and hand the job to the current pi agent.",
+  "license": "MIT",
+  "author": "bestony",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-agent",
+    "translation",
+    "glossary",
+    "review"
+  ],
+  "files": [
+    "extensions",
+    "src",
+    "defaults",
+    "schema",
+    "scripts",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./extension": "./extensions/index.ts",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "translate-review-exit-code": "./scripts/review-exit-code.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bestony/pi-bestony-translate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bestony/pi-bestony-translate/issues"
+  },
+  "homepage": "https://github.com/bestony/pi-bestony-translate#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "check": "npm run typecheck && npm test"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.85.1",
+    "@earendil-works/pi-tui": "^0.85.1",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0",
+    "vitest": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
