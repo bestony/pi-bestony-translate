@@ -62,7 +62,7 @@
     "@earendil-works/pi-tui": "^0.85.1",
     "@types/node": "^22.10.0",
     "typescript": "^5.6.0",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.5"
   },
   "engines": {
     "node": ">=20"
